@@ -1,4 +1,4 @@
-const initSate = {
+const initState = {
     posts: [
         {
             id: '1',
@@ -18,7 +18,21 @@ const initSate = {
     ]
 }
 
-const rootReducer = (state = initSate, action) => {
+const rootReducer = (state = initState, action) => {
+    console.log(action)
+    if (action.type === 'DELE_POST') {
+        let newPosts = state.posts.filter((posts) => {
+            return posts.id !== action.id;
+        });
+
+        return {
+            ...state,
+            posts: newPosts
+        }
+    }
+    if (action.type === 'ADD_POST') {
+        console.log('hello')
+    }
     return state;
 }
 
