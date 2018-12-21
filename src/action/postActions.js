@@ -5,9 +5,10 @@ export const deletePost = (id) => {
     }
 }
 
-export const addPost = () => {
+export const addPost = (newPost) => {
+    console.log(newPost, 'in action')
     return {
         type: 'ADD_POST',
-        aa: 'adsadads'
+        newPost
     }
 }

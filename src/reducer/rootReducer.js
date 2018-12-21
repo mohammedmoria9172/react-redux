@@ -24,14 +24,17 @@ const rootReducer = (state = initState, action) => {
         let newPosts = state.posts.filter((posts) => {
             return posts.id !== action.id;
         });
-
         return {
             ...state,
             posts: newPosts
         }
     }
     if (action.type === 'ADD_POST') {
-        console.log('hello')
+        console.log(action.newPost, 'in reducer')
+        state.posts.push(action.newPost)
+        return {
+            ...state
+        }
     }
     return state;
 }

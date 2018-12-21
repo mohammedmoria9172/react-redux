@@ -20,8 +20,8 @@ class Home extends Component {
         });
         return (
             <div>
-                hhiiii
                 {allPosts}
+                <Link className="addpost" to='/newpost'>Add new Post</Link>
             </div>
         )
     }
